@@ -27,8 +27,6 @@ median(result,na.rm=TRUE)
 result <- tapply(activity_data$steps, activity_data$interval, mean, na.rm = T)
 plot(result, type = "l", main = "Average number of steps in a day",
      xlab = "5-minute interval in a day", ylab = "Average number of steps")
-        dev.copy(png, file="C:/Project/Reproducible Research/figures/Average Steps per day.png", width=480, height=480)
-        dev.off()
 ```
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 ```{r, echo=TRUE}
@@ -65,8 +63,6 @@ result <- tapply(new.activity_data$steps, new.activity_data$date, sum,
                  na.rm = T)
 barplot(result, main = "Total number of steps", xlab = "Days", ylab = "Steps",
         names.arg = "")
-        dev.copy(png, file="C:/Project/Reproducible Research/figures/Total Number of Steps.png", width=480, height=480)
-        dev.off()
 steps.mean <- mean(result, na.rm = T)
 steps.median <- median(result, na.rm = T)
 steps.mean
@@ -98,7 +94,5 @@ plot(tapply(weekend.activity_data$steps, weekend.activity_data$interval, mean),
      type = "l", 
      main = "Average number of steps in a weekend", 
      xlab = "5-minute interval in a weekend", ylab = "Average number of steps")
-dev.copy(png, file="C:/Project/Reproducible Research/figures/Activity pattern.png", width=480, height=480)
-dev.off()
 ```
 

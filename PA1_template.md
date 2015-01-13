@@ -65,26 +65,6 @@ plot(result, type = "l", main = "Average number of steps in a day",
 ```
 
 <img src="PA1_template_files/figure-html/unnamed-chunk-14-1.png" title="" alt="" width="672" />
-
-```r
-        dev.copy(png, file="C:/Project/Reproducible Research/figures/Average Steps per day.png", width=480, height=480)
-```
-
-```
-## png 
-##   4
-```
-
-```r
-        dev.off()
-```
-
-<img src="PA1_template_files/figure-html/unnamed-chunk-14-2.png" title="" alt="" width="672" />
-
-```
-## pdf 
-##   2
-```
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
 ```r
@@ -135,26 +115,6 @@ barplot(result, main = "Total number of steps", xlab = "Days", ylab = "Steps",
 ```
 
 <img src="PA1_template_files/figure-html/unnamed-chunk-18-1.png" title="" alt="" width="672" />
-
-```r
-        dev.copy(png, file="C:/Project/Reproducible Research/figures/Total Number of Steps.png", width=480, height=480)
-```
-
-```
-## png 
-##   4
-```
-
-```r
-        dev.off()
-```
-
-<img src="PA1_template_files/figure-html/unnamed-chunk-18-2.png" title="" alt="" width="672" />
-
-```
-## pdf 
-##   2
-```
 
 ```r
 steps.mean <- mean(result, na.rm = T)

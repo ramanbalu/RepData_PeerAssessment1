@@ -13,8 +13,6 @@ For this part of the assignment, you can ignore the missing values in the datase
 ```{r, echo=TRUE}
 result <- tapply(activity_data$steps, activity_data$date, sum, na.rm = T)
 barplot(result, main = "Total number of steps", xlab = "Days", ylab = "Steps")
-        dev.copy(png, file="C:/Project/Reproducible Research/figures/Number of steps.png", width=480, height=480)
-        dev.off()
 ```
 2. Calculate and report the mean and median total number of steps taken per day
 ```{r, echo=TRUE}
@@ -69,7 +67,7 @@ steps.mean
 steps.median
 ```
 ## Are there differences in activity patterns between weekdays and weekends?
-1.Creating a new factor variable in the dataset with two levels - “weekday” and “weekend” indicating whether a given date is a weekday or weekend day.
+1.Creating a new factor variable in the dataset with two levels - ?weekday? and ?weekend? indicating whether a given date is a weekday or weekend day.
 
 ```{r, echo = TRUE}
 new.activity_data$day <- ifelse(weekdays(as.Date(new.activity_data$date), 
@@ -95,4 +93,3 @@ plot(tapply(weekend.activity_data$steps, weekend.activity_data$interval, mean),
      main = "Average number of steps in a weekend", 
      xlab = "5-minute interval in a weekend", ylab = "Average number of steps")
 ```
-

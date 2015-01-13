@@ -17,27 +17,7 @@ result <- tapply(activity_data$steps, activity_data$date, sum, na.rm = T)
 barplot(result, main = "Total number of steps", xlab = "Days", ylab = "Steps")
 ```
 
-<img src="PA1_template_files/figure-html/unnamed-chunk-12-1.png" title="" alt="" width="672" />
-
-```r
-        dev.copy(png, file="C:/Project/Reproducible Research/figures/Number of steps.png", width=480, height=480)
-```
-
-```
-## png 
-##   4
-```
-
-```r
-        dev.off()
-```
-
-<img src="PA1_template_files/figure-html/unnamed-chunk-12-2.png" title="" alt="" width="672" />
-
-```
-## pdf 
-##   2
-```
+<img src="PA1_template_files/figure-html/unnamed-chunk-13-1.png" title="" alt="" width="672" />
 2. Calculate and report the mean and median total number of steps taken per day
 
 ```r
@@ -64,7 +44,7 @@ plot(result, type = "l", main = "Average number of steps in a day",
      xlab = "5-minute interval in a day", ylab = "Average number of steps")
 ```
 
-<img src="PA1_template_files/figure-html/unnamed-chunk-14-1.png" title="" alt="" width="672" />
+<img src="PA1_template_files/figure-html/unnamed-chunk-15-1.png" title="" alt="" width="672" />
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
 ```r
@@ -114,7 +94,7 @@ barplot(result, main = "Total number of steps", xlab = "Days", ylab = "Steps",
         names.arg = "")
 ```
 
-<img src="PA1_template_files/figure-html/unnamed-chunk-18-1.png" title="" alt="" width="672" />
+<img src="PA1_template_files/figure-html/unnamed-chunk-19-1.png" title="" alt="" width="672" />
 
 ```r
 steps.mean <- mean(result, na.rm = T)
@@ -134,7 +114,7 @@ steps.median
 ## [1] 10766.19
 ```
 ## Are there differences in activity patterns between weekdays and weekends?
-1.Creating a new factor variable in the dataset with two levels - “weekday” and “weekend” indicating whether a given date is a weekday or weekend day.
+1.Creating a new factor variable in the dataset with two levels - ?weekday? and ?weekend? indicating whether a given date is a weekday or weekend day.
 
 
 ```r
@@ -147,5 +127,22 @@ new.activity_data <- transform(new.activity_data, day = factor(day))
 2.Making a panel plot containing a time series plot of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or 
 weekend days (y-axis).
 
+
+```r
+weekday.activity_data <- new.activity_data[new.activity_data$day == "weekday", ]
+weekend.activity_data <- new.activity_data[new.activity_data$day == "weekend", ]
+par(mfrow = c(1, 2))
+plot(tapply(weekday.activity_data$steps, weekday.activity_data$interval, mean), 
+     type = "l", 
+     main = "Average number of steps in a weekday", 
+     xlab = "5-minute interval in a weekday", ylab = "Average number of steps")
+
+plot(tapply(weekend.activity_data$steps, weekend.activity_data$interval, mean), 
+     type = "l", 
+     main = "Average number of steps in a weekend", 
+     xlab = "5-minute interval in a weekend", ylab = "Average number of steps")
+```
+
+<img src="PA1_template_files/figure-html/unnamed-chunk-21-1.png" title="" alt="" width="672" />
 
 
